@@ -23,3 +23,8 @@ Push je oplossingen telkens naar je gitrepository en nodig mij (tom.vanlerberghe
 Stuur me een mailtje telkens je een versie af hebt.
 */
 
+console.log(
+    [ { zijde: 3, kleur: "rood" }, 
+    { zijde: 5, kleur: "geel" } ]
+    .map(vierkant => vierkant.zijde * vierkant.zijde) 
+    .reduce((som, oppervlakte) => som + oppervlakte)); 

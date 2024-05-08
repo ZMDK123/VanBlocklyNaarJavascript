@@ -9,7 +9,7 @@ console.log(kwadraat(4));                           // (2)
 const som = (getal1, getal2) => getal1 + getal2;    // (3)
 console.log(som(4, 2));
 const verschil = (getal1, getal2) =>
- { const hetVerschil = getal1 - getal2; return hetVerschil; }; 
+ { const hetVerschil = getal1 - getal2; return hetVerschil; }; //(4)
 console.log(verschil(5, 2));
 // (1) Het deel na = is de eigenlijke lambda. We kijken eerst naar die lambda.
 // Die heeft één parameter: getal. Je typt de parameter voor =>.

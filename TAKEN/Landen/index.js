@@ -9,28 +9,31 @@ Toon per land de naam en de oppervlakte.
 Toon de landen met een oppervlakte boven dit gemiddelde.
 Toon per land de naam en de oppervlakte. */
 
-function typMensen() {
-    const mensen = [];
-    let naam = prompt("Naam:");
-    while (naam !== "stop") {
-    mensen.push({ naam: naam, lengte: Number(prompt("Lengte:")) });
+function typLanden() {
+  const landen = [];
+  let naam = prompt("Naam:");
+  while (naam !== "stop") {
+    landen.push({ naam: naam, oppervlakte: Number(prompt("Oppervlakte")) });
     naam = prompt("Naam:");
-    }
-    return mensen;
-   }
-   function toonRapport(mensen) {
-    const kleinsteLengte = mensen.map(mens => mens.lengte)
-    .reduce((kleinste, lengte) => kleinste < lengte ? kleinste : lengte);
-    console.log("Kleinste lengte:" , kleinsteLengte);
-    mensen.filter(mens => mens.lengte === kleinsteLengte)
-    .forEach(mens => console.log(mens.naam));
-    const grootsteLengte = mensen.map(mens => mens.lengte)
-    .reduce((grootste, lengte) => grootste > lengte ? grootste : lengte);
-    console.log("Grootste lengte:" , grootsteLengte);
-    mensen.filter(mens => mens.lengte === grootsteLengte)
-    .forEach(mens => console.log(mens.naam));
-   }
-   const mensen = typMensen();
-   if (mensen.length !== 0) {
-    toonRapport(mensen);
-   }
+  }
+  return landen;
+}
+function toonRapport(landen) {
+  const gemiddelde =
+    landen
+      .map((land) => land.oppervlakte)
+      .reduce((totaal, oppervlakte) => totaal + oppervlakte) / landen.length;
+  console.log("Gemiddelde:", gemiddelde);
+  console.log("Onder gemiddelde:");
+  landen
+    .filter((land) => land.oppervlakte < gemiddelde)
+    .forEach((land) => console.log(land.naam, land.oppervlakte));
+  console.log("Boven gemiddelde:");
+  landen
+    .filter((land) => land.oppervlakte > gemiddelde)
+    .forEach((land) => console.log(land.naam, land.oppervlakte));
+}
+const landen = typLanden();
+if (landen.length !== 0) {
+  toonRapport(landen);
+}
