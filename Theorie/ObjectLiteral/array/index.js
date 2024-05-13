@@ -1,3 +1,6 @@
+"use strict";
+const prompt = require("prompt-sync")();
+
 const vierkanten = [ 
     { zijde: 3, kleur: "rood" }, 
     { zijde: 7, kleur: "groen" } 

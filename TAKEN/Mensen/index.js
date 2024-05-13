@@ -1,13 +1,15 @@
 "use strict";
 const prompt = require("prompt-sync")();
 
-/*1.18 Mensen
+/*
+1.18 Mensen
 De gebruiker typt per mens de naam en de lengte.
 Hij herhaalt dit tot hij stop typt bij de naam.
 Toon de kleinste lengte van de mensen.
 Toon de mensen met een lengte gelijk aan de kleinste lengte. Toon per mens de naam.
 Toon de grootste lengte van de mensen.
-Toon daarna de mensen met een lengte gelijk aan de grootste lengte. Toon per mens de naam*/
+Toon daarna de mensen met een lengte gelijk aan de grootste lengte. Toon per mens de naam
+*/
 
 function typMensen() {
   const mensen = [];

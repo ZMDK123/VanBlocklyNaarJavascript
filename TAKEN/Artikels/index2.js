@@ -24,7 +24,6 @@ Stuur me een mailtje telkens je een versie af hebt.
 */
 
 // 1 ///
-//function typArtikels() {
 const artikels = [];
 let artikel = prompt("Artikel:");
 while (artikel !== "stop") {
@@ -35,25 +34,25 @@ while (artikel !== "stop") {
   });
   artikel = prompt("Artikel:");
 }
-//  return artikels;
-// }
 
-// const artikels = typArtikels();
-// artikels.forEach(artikel => console.log(artikel));
 
 console.log();
 
 // 2 ///
+const zoekArtikel = prompt("Zoek artikel:");
 
-artikels
-  .filter((artikel) => artikel.artikelnaam.includes(zoekArtikel))
-  .forEach((artikel) => console.log(artikel.artikelnaam));
+for (const artikel of artikels) {
+  if (artikel.artikelnaam.includes(zoekArtikel)) {
+    console.log(artikel.artikelnaam);
+  }
+}
+
+5
 
 console.log();
 
 // 3 ///
 const minVerkoop = prompt("Minimum verkoopprijs:");
-// function maximumPrijs(){
 let maxVerkoop = prompt("Maximum verkoopprijs:");
 while (maxVerkoop < minVerkoop) {
   maxVerkoop = Number(
@@ -62,32 +61,31 @@ while (maxVerkoop < minVerkoop) {
     )
   );
 }
-//    return maxVerkoop;
-//   }
-// const maxVerkoop = maximumPrijs();
 
-artikels
-  .filter(
-    (artikel) =>
-      artikel.verkoopprijs <= maxVerkoop && artikel.verkoopprijs >= minVerkoop
-  )
-  .forEach((artikel) =>
+let teller = 0
+let totaal = 0
+for (const artikel of artikels) {
+  if (
+    artikel.verkoopprijs >= minVerkoop &&
+    artikel.verkoopprijs <= maxVerkoop
+  ) {
     console.log(
       "Artikelnaam: ",
       artikel.artikelnaam,
       "     Verkoopprijs: ",
       artikel.verkoopprijs,
       "€"
-    )
-  );
+    );
+  }
+  teller++;// 4 ///
+  totaal += artikel.verkoopprijs// 4 ///
+}
+
 
 console.log();
 
 // 4 ///
 console.log(
-  "Gemiddelde prijs: ",
-  artikels
-    .map((prijs) => prijs.verkoopprijs)
-    .reduce((som, prijs) => som + prijs) / artikels.length,
+  "Gemiddelde prijs: ", totaal/teller,
   "€"
 );

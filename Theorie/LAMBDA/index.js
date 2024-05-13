@@ -42,8 +42,8 @@ getallen.forEach(getal => console.log(getal)); // (1)
 // Jij definieert die voorwaarde als een lambda die je meegeeft aan filter.
 // Voorbeeld: je maakt een array met de positieve getallen uit een oorspronkelijke array:
 
-const getallen = [-1, 2, 3, 4, 0];
-const positieveGetallen = getallen.filter(getal => getal > 0); // (1)
+const getallenA = [-1, 2, 3, 4, 0];
+const positieveGetallen = getallenA.filter(getal => getal > 0); // (1)
 positieveGetallen.forEach(getal => console.log(getal));
 // (1) Je geeft aan filter een lambda mee. filter roept die lambda op per element uit de array.
 // Als de lambda true teruggeeft, neemt filter het element op in een nieuwe array.
