@@ -46,7 +46,7 @@ for (const artikel of artikels) {
     console.log(artikel.artikelnaam);
   }
 }
-cv 
+
 console.log();
 
 // 3 ///
@@ -68,11 +68,7 @@ for (const artikel of artikels) {
     artikel.verkoopprijs <= maxVerkoop
   ) {
     console.log(
-      "Artikelnaam: ",
-      artikel.artikelnaam,
-      "     Verkoopprijs: ",
-      artikel.verkoopprijs,
-      "€"
+      `Artikelnaam: ${artikel.artikelnaam}    Verkoopprijs: ${artikel.verkoopprijs}€`
     );
   }
   teller++;// 4 ///
@@ -83,7 +79,4 @@ for (const artikel of artikels) {
 console.log();
 
 // 4 ///
-console.log(
-  "Gemiddelde prijs: ", totaal/teller,
-  "€"
-);
+console.log(`Gemiddelde prijs: ${totaal/teller}€`);

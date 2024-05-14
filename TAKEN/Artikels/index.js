@@ -24,7 +24,6 @@ Stuur me een mailtje telkens je een versie af hebt.
 */
 
 // 1 ///
-
 const artikels = [];
 let artikel = prompt("Artikel:");
 while (artikel !== "stop") {
@@ -39,7 +38,7 @@ while (artikel !== "stop") {
 console.log();
 
 // 2 ///
-
+const zoekArtikel = prompt("Zoek artikel:");
 artikels
   .filter((artikel) => artikel.artikelnaam.includes(zoekArtikel))
   .forEach((artikel) => console.log(artikel.artikelnaam));
@@ -65,11 +64,7 @@ artikels
   )
   .forEach((artikel) =>
     console.log(
-      "Artikelnaam: ",
-      artikel.artikelnaam,
-      "     Verkoopprijs: ",
-      artikel.verkoopprijs,
-      "€"
+      `Artikelnaam: ${artikel.artikelnaam}    Verkoopprijs: ${artikel.verkoopprijs}€`
     )
   );
 
@@ -77,9 +72,7 @@ console.log();
 
 // 4 ///
 console.log(
-  "Gemiddelde prijs: ",
-  artikels
+  `Gemiddelde prijs: ${artikels
     .map((prijs) => prijs.verkoopprijs)
-    .reduce((som, prijs) => som + prijs) / artikels.length,
-  "€"
+    .reduce((som, prijs) => som + prijs) / artikels.length}€`
 );
