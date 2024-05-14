@@ -24,7 +24,7 @@ Stuur me een mailtje telkens je een versie af hebt.
 */
 
 // 1 ///
-//function typArtikels() {
+
 const artikels = [];
 let artikel = prompt("Artikel:");
 while (artikel !== "stop") {
@@ -35,11 +35,6 @@ while (artikel !== "stop") {
   });
   artikel = prompt("Artikel:");
 }
-//  return artikels;
-// }
-
-// const artikels = typArtikels();
-// artikels.forEach(artikel => console.log(artikel));
 
 console.log();
 
@@ -53,7 +48,6 @@ console.log();
 
 // 3 ///
 const minVerkoop = prompt("Minimum verkoopprijs:");
-// function maximumPrijs(){
 let maxVerkoop = prompt("Maximum verkoopprijs:");
 while (maxVerkoop < minVerkoop) {
   maxVerkoop = Number(
@@ -62,9 +56,7 @@ while (maxVerkoop < minVerkoop) {
     )
   );
 }
-//    return maxVerkoop;
-//   }
-// const maxVerkoop = maximumPrijs();
+
 
 artikels
   .filter(
